@@ -4,6 +4,7 @@ import { PageProps, graphql } from "gatsby"
 export interface Post {
   content: string
   date: string
+  id: string
   slug: string
   title: string
 }
