@@ -100,6 +100,11 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
             View all posts
           </a>
         </li>
+        <li style={listItemStyles}>
+          <a href="/projects" style={linkStyle}>
+            View all projects
+          </a>
+        </li>
         {data.allWpPage.nodes.map((page: Page) => (
           <li key={page.id} style={listItemStyles}>
             <a href={`/${page.slug}`} style={linkStyle}>
