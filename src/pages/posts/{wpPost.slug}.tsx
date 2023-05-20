@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import Layout from "../../components/Layout"
 
 export interface Post {
   content: string
@@ -21,11 +22,11 @@ export const PostQuery = graphql`
 
 const PostPage = ({ data }: any) => {
   return (
-    <>
+    <Layout>
       <h2>{data.wpPost.title}</h2>
       <div>{data.wpPost.content}</div>
       <p>{data.wpPost.date}</p>
-    </>
+    </Layout>
   )
 }
 

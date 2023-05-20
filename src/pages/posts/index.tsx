@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, PageProps, graphql } from "gatsby"
+import Layout from "../../components/Layout"
 
 export interface Post {
   content: string
@@ -23,7 +24,7 @@ export const PostsQuery = graphql`
 
 const PostsPage: React.FC<PageProps> = ({ data }: any) => {
   return (
-    <div>
+    <Layout>
       {data.allWpPost.nodes.map((post: Post) => (
         <div key={post.id}>
           <h2>
@@ -31,7 +32,7 @@ const PostsPage: React.FC<PageProps> = ({ data }: any) => {
           </h2>
         </div>
       ))}
-    </div>
+    </Layout>
   )
 }
 
