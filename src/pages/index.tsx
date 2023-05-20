@@ -1,14 +1,14 @@
-import * as React from 'react'
-import type { HeadFC, PageProps } from 'gatsby'
-import Layout from '../components/Layout'
+import * as React from "react"
+import type { HeadFC, PageProps } from "gatsby"
+import Layout from "../components/Layout"
 
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
-  maxWidth: 320
+  maxWidth: 320,
 }
 const headingAccentStyles = {
-  color: '#663399'
+  color: "#663399",
 }
 
 const IndexPage: React.FC<PageProps> = () => {

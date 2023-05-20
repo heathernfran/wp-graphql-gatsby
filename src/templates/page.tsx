@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import { renderHtml } from '../utilities/renderHtml'
+import * as React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import { renderHtml } from "../utilities/renderHtml"
 
 export const PageTemplateQuery = graphql`
   query PageTemplateQuery($slug: String!) {

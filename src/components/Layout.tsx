@@ -1,10 +1,10 @@
-import * as React from 'react'
-import Navbar from './Navbar'
+import * as React from "react"
+import Navbar from "./Navbar"
 
 const pageStyles = {
-  color: '#232129',
+  color: "#232129",
   padding: 96,
-  fontFamily: '-apple-system, Roboto, sans-serif, serif'
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
 const Layout = ({ children }: any) => {

@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import * as React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const listStyles = {
   marginBottom: 48,
-  paddingLeft: 0
+  paddingLeft: 0,
 }
 
 const listItemStyles = {
@@ -11,17 +11,17 @@ const listItemStyles = {
   fontSize: 24,
   maxWidth: 560,
   marginBottom: 30,
-  listStyleType: 'none',
-  display: 'inline-block',
+  listStyleType: "none",
+  display: "inline-block",
   marginRight: 12,
-  paddingLeft: 0
+  paddingLeft: 0,
 }
 
 const linkStyle = {
-  color: '#8954A8',
-  fontWeight: 'bold',
+  color: "#8954A8",
+  fontWeight: "bold",
   fontSize: 16,
-  verticalAlign: '5%'
+  verticalAlign: "5%",
 }
 
 export interface Page {
