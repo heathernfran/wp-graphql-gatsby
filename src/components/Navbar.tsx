@@ -49,6 +49,11 @@ const Navbar = () => {
     <nav>
       <ul style={listStyles}>
         <li style={listItemStyles}>
+          <Link to="/" style={linkStyle}>
+            Home
+          </Link>
+        </li>
+        <li style={listItemStyles}>
           <Link to="/posts" style={linkStyle}>
             View all posts
           </Link>
