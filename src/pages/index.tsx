@@ -1,6 +1,6 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const pageStyles = {
   color: "#232129",
@@ -96,20 +96,20 @@ const IndexPage: React.FC<PageProps> = ({ data }: any) => {
       </h1>
       <ul style={listStyles}>
         <li style={listItemStyles}>
-          <a href="/posts" style={linkStyle}>
+          <Link to="/posts" style={linkStyle}>
             View all posts
-          </a>
+          </Link>
         </li>
         <li style={listItemStyles}>
-          <a href="/projects" style={linkStyle}>
+          <Link to="/projects" style={linkStyle}>
             View all projects
-          </a>
+          </Link>
         </li>
         {data.allWpPage.nodes.map((page: Page) => (
           <li key={page.id} style={listItemStyles}>
-            <a href={`/${page.slug}`} style={linkStyle}>
+            <Link to={`/${page.slug}`} style={linkStyle}>
               {page.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
