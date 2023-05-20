@@ -1,5 +1,5 @@
 import * as React from "react"
-import { PageProps, graphql } from "gatsby"
+import { Link, PageProps, graphql } from "gatsby"
 
 export interface Post {
   content: string
@@ -13,8 +13,6 @@ export const PostsQuery = graphql`
   query PostsQuery {
     allWpPost {
       nodes {
-        content
-        date
         id
         slug
         title
@@ -27,11 +25,11 @@ const PostsPage: React.FC<PageProps> = ({ data }: any) => {
   return (
     <div>
       {data.allWpPost.nodes.map((post: Post) => (
-        <>
-          <h2>{post.title}</h2>
-          <div>{post.content}</div>
-          <span>{post.date}</span>
-        </>
+        <div key={post.id}>
+          <h2>
+            <Link to={`/posts/${post.slug}`}>{post.title}</Link>
+          </h2>
+        </div>
       ))}
     </div>
   )

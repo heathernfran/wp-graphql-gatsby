@@ -63,8 +63,6 @@ const descriptionStyle = {
 }
 
 export interface Page {
-  content: string
-  date: string
   id: string
   slug: string
   title: string
@@ -74,8 +72,6 @@ export const PagesQuery = graphql`
   query PagesQuery {
     allWpPage {
       nodes {
-        content
-        date
         id
         slug
         title
