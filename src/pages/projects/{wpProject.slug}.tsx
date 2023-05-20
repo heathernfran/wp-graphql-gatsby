@@ -19,7 +19,7 @@ const ProjectPage = ({ data }: any) => {
     <Layout>
       <h2>{data.wpProject.name}</h2>
       <div>{renderHtml(data.wpProject.description)}</div>
-      <p>{data.wpProject.dueDate}</p>
+      <p>Due date: {data.wpProject.dueDate}</p>
     </Layout>
   )
 }

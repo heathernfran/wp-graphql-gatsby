@@ -14,7 +14,7 @@ export const PostQuery = graphql`
   query PostQuery($slug: String!) {
     wpPost(slug: { eq: $slug }) {
       content
-      date
+      date(formatString: "YYYY-MM-DD")
       id
       title
     }
@@ -26,7 +26,7 @@ const PostPage = ({ data }: any) => {
     <Layout>
       <h2>{data.wpPost.title}</h2>
       <div>{renderHtml(data.wpPost.content)}</div>
-      <p>{data.wpPost.date}</p>
+      <p>Published: {data.wpPost.date}</p>
     </Layout>
   )
 }

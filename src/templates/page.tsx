@@ -7,7 +7,7 @@ export const PageTemplateQuery = graphql`
   query PageTemplateQuery($slug: String!) {
     wpPage(slug: { eq: $slug }) {
       content
-      date
+      date(formatString: "YYYY-MM-DD")
       id
       slug
       title
@@ -20,7 +20,7 @@ const PageTemplate = ({ data }: any) => {
     <Layout>
       <h2>{data.wpPage.title}</h2>
       <div>{renderHtml(data.wpPage.content)}</div>
-      <span>{data.wpPage.date}</span>
+      <span>Published: {data.wpPage.date}</span>
     </Layout>
   )
 }
