@@ -24,15 +24,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dompurify": "^3.0.3",
     "gatsby": "^5.9.1",
     "gatsby-source-wordpress": "^7.10.0",
     "html-react-parser": "^3.0.16",
+    "isomorphic-dompurify": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/dompurify": "^3.0.2",
     "@types/node": "^18.16.5",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.4",
