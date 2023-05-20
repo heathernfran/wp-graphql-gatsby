@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
+import { renderHtml } from "../../utilities/renderHtml"
 
 export const ProjectQuery = graphql`
   query ProjectQuery($slug: String!) {
@@ -17,7 +18,7 @@ const ProjectPage = ({ data }: any) => {
   return (
     <Layout>
       <h2>{data.wpProject.name}</h2>
-      <div>{data.wpProject.description}</div>
+      <div>{renderHtml(data.wpProject.description)}</div>
       <p>{data.wpProject.dueDate}</p>
     </Layout>
   )

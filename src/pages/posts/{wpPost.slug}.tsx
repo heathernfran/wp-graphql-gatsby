@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
+import { renderHtml } from "../../utilities/renderHtml"
 
 export interface Post {
   content: string
@@ -24,7 +25,7 @@ const PostPage = ({ data }: any) => {
   return (
     <Layout>
       <h2>{data.wpPost.title}</h2>
-      <div>{data.wpPost.content}</div>
+      <div>{renderHtml(data.wpPost.content)}</div>
       <p>{data.wpPost.date}</p>
     </Layout>
   )

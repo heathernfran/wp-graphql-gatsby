@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { renderHtml } from "../utilities/renderHtml"
 
 export const PageTemplateQuery = graphql`
   query PageTemplateQuery($slug: String!) {
@@ -18,7 +19,7 @@ const PageTemplate = ({ data }: any) => {
   return (
     <Layout>
       <h2>{data.wpPage.title}</h2>
-      <div>{data.wpPage.content}</div>
+      <div>{renderHtml(data.wpPage.content)}</div>
       <span>{data.wpPage.date}</span>
     </Layout>
   )
