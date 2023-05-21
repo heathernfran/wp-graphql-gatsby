@@ -1,13 +1,21 @@
-import * as React from "react"
+import React from "react"
 import { Link, PageProps, graphql } from "gatsby"
 import Layout from "../../components/Layout"
 
-export interface Post {
-  content: string
-  date: string
+interface Post {
   id: string
   slug: string
   title: string
+}
+
+type DataType = {
+  allWpPost: {
+    nodes: {
+      id: string
+      slug: string
+      title: string
+    }[]
+  }
 }
 
 export const PostsQuery = graphql`
@@ -22,7 +30,7 @@ export const PostsQuery = graphql`
   }
 `
 
-const PostsPage: React.FC<PageProps> = ({ data }: any) => {
+const PostsPage = ({ data }: PageProps<DataType>) => {
   return (
     <Layout>
       {data.allWpPost.nodes.map((post: Post) => (

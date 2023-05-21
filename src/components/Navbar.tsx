@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const listStyles = {
@@ -24,7 +24,7 @@ const linkStyle = {
   verticalAlign: "5%",
 }
 
-export interface Page {
+interface Page {
   id: string
   slug: string
   title: string
@@ -42,7 +42,7 @@ const PagesQuery = graphql`
   }
 `
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const data = useStaticQuery(PagesQuery)
 
   return (

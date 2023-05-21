@@ -1,12 +1,22 @@
-import * as React from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import type { PageProps } from "gatsby"
 import Layout from "../../components/Layout"
 
-export interface Project {
+interface Project {
   id: string
   name: string
   slug: string
+}
+
+type DataType = {
+  allWpProject: {
+    nodes: {
+      id: string
+      name: string
+      slug: string
+    }[]
+  }
 }
 
 export const ProjectsQuery = graphql`
@@ -21,7 +31,7 @@ export const ProjectsQuery = graphql`
   }
 `
 
-const ProjectsPage: React.FC<PageProps> = ({ data }: any) => {
+const ProjectsPage = ({ data }: PageProps<DataType>) => {
   return (
     <Layout>
       {data.allWpProject.nodes.map((project: Project) => (

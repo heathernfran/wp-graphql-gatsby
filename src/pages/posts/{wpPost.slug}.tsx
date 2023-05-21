@@ -1,13 +1,16 @@
-import * as React from "react"
+import React from "react"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
 import Layout from "../../components/Layout"
 import { renderHtml } from "../../utilities/renderHtml"
 
-export interface Post {
-  content: string
-  date: string
-  id: string
-  title: string
+type DataType = {
+  wpPost: {
+    content: string
+    date: string
+    id: string
+    title: string
+  }
 }
 
 export const PostQuery = graphql`
@@ -21,7 +24,7 @@ export const PostQuery = graphql`
   }
 `
 
-const PostPage = ({ data }: any) => {
+const PostPage = ({ data }: PageProps<DataType>) => {
   return (
     <Layout>
       <h2>{data.wpPost.title}</h2>

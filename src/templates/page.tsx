@@ -1,21 +1,30 @@
-import * as React from "react"
+import React from "react"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import { renderHtml } from "../utilities/renderHtml"
+
+interface DataType {
+  wpPage: {
+    content: string
+    date: string
+    title: string
+  }
+}
 
 export const PageTemplateQuery = graphql`
   query PageTemplateQuery($slug: String!) {
     wpPage(slug: { eq: $slug }) {
       content
       date(formatString: "YYYY-MM-DD")
-      id
-      slug
       title
     }
   }
 `
 
-const PageTemplate = ({ data }: any) => {
+const PageTemplate: React.FC<PageProps<DataType>> = ({
+  data,
+}: PageProps<DataType>) => {
   return (
     <Layout>
       <h2>{data.wpPage.title}</h2>

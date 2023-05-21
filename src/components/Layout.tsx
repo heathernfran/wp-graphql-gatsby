@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { type PropsWithChildren } from "react"
 import Navbar from "./Navbar"
 
 const pageStyles = {
@@ -7,7 +7,9 @@ const pageStyles = {
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
-const Layout = ({ children }: any) => {
+const Layout: React.FC<PropsWithChildren> = ({
+  children,
+}: PropsWithChildren) => {
   return (
     <main style={pageStyles}>
       <Navbar />
