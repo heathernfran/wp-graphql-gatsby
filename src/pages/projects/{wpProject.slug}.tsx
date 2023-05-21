@@ -1,7 +1,8 @@
 import React from "react"
-import type { PageProps } from "gatsby"
+import type { HeadFC, PageProps } from "gatsby"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
 import { renderHtml } from "../../utilities/renderHtml"
 
 type DataType = {
@@ -35,3 +36,7 @@ const ProjectPage = ({ data }: PageProps<DataType>) => {
 }
 
 export default ProjectPage
+
+export const Head: React.FC<PageProps<DataType>> = ({
+  data,
+}: PageProps<DataType>) => <SEO title={data.wpProject.name} />

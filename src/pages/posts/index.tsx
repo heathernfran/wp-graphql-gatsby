@@ -1,6 +1,7 @@
 import React from "react"
-import { Link, PageProps, graphql } from "gatsby"
+import { HeadFC, Link, PageProps, graphql } from "gatsby"
 import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
 
 interface Post {
   id: string
@@ -45,3 +46,5 @@ const PostsPage = ({ data }: PageProps<DataType>) => {
 }
 
 export default PostsPage
+
+export const Head: HeadFC = () => <SEO title="All Posts" />
