@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import type { PageProps } from "gatsby"
+import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 import { renderHtml } from "../utilities/renderHtml"
 
 interface DataType {
@@ -35,3 +36,5 @@ const PageTemplate: React.FC<PageProps<DataType>> = ({
 }
 
 export default PageTemplate
+
+export const Head: HeadFC = () => <SEO />
