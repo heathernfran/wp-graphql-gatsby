@@ -37,4 +37,6 @@ const ProjectPage = ({ data }: PageProps<DataType>) => {
 
 export default ProjectPage
 
-export const Head: HeadFC = () => <SEO />
+export const Head: React.FC<PageProps<DataType>> = ({
+  data,
+}: PageProps<DataType>) => <SEO title={data.wpProject.name} />

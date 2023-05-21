@@ -14,7 +14,12 @@ interface SEOMetadata {
   url: string
 }
 
-const SEO: React.FC = ({ children, description, pathname, title }: Props) => {
+const SEO: React.FC<Props> = ({
+  children,
+  description,
+  pathname,
+  title,
+}: Props) => {
   const {
     description: defaultDescription,
     siteUrl,

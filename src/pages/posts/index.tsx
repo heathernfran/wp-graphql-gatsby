@@ -47,4 +47,4 @@ const PostsPage = ({ data }: PageProps<DataType>) => {
 
 export default PostsPage
 
-export const Head: HeadFC = () => <SEO />
+export const Head: HeadFC = () => <SEO title="All Posts" />
