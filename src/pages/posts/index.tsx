@@ -1,5 +1,6 @@
 import React from "react"
-import { HeadFC, Link, PageProps, graphql } from "gatsby"
+import type { HeadFC, PageProps} from "gatsby";
+import { Link, graphql } from "gatsby"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 
